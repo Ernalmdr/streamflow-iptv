@@ -3,23 +3,18 @@
 <head>
   <meta charset="utf-8"/>
 
+<script src="polyfills.js"></script>
 <script>
-/* === Tizen 2.3 Polyfills === */
-if(!Array.from){Array.from=function(a){return[].slice.call(a)};}
-if(!Array.prototype.find){Array.prototype.find=function(fn){for(var i=0;i<this.length;i++){if(fn(this[i],i,this))return this[i];};};}
-if(!Array.prototype.findIndex){Array.prototype.findIndex=function(fn){for(var i=0;i<this.length;i++){if(fn(this[i],i,this))return i;}return -1;};}
-if(!Array.prototype.includes){Array.prototype.includes=function(v){return this.indexOf(v)!==-1;};}
-if(!String.prototype.includes){String.prototype.includes=function(v){return this.indexOf(v)!==-1;};}
-if(!String.prototype.startsWith){String.prototype.startsWith=function(v){return this.indexOf(v)===0;};}
-if(!String.prototype.endsWith){String.prototype.endsWith=function(v){return this.indexOf(v,this.length-v.length)!==-1;};}
-if(!String.prototype.padStart){String.prototype.padStart=function(n,c){c=c||' ';var s=this;while(s.length<n)s=c+s;return s;};}
-if(!Object.assign){Object.assign=function(t){for(var i=1;i<arguments.length;i++){var s=arguments[i];for(var k in s){if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];}}return t;};}
-if(!Object.entries){Object.entries=function(o){return Object.keys(o).map(function(k){return[k,o[k]];});};}
-if(!Object.values){Object.values=function(o){return Object.keys(o).map(function(k){return o[k];});};}
-if(!Element.prototype.closest){Element.prototype.closest=function(s){var el=this;do{if(el.matches(s))return el;el=el.parentElement;}while(el!==null);return null;};}
-if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector;}
-if(typeof Promise==='undefined'){window.Promise=function(fn){var callbacks=[];var value;var state='pending';function resolve(v){state='fulfilled';value=v;callbacks.forEach(function(cb){cb(v);});}function reject(v){state='rejected';value=v;}fn(resolve,reject);this.then=function(cb){if(state==='fulfilled')cb(value);else callbacks.push(cb);return this;};};}
-if(typeof fetch==='undefined'){window.fetch=function(url,opts){return new Promise(function(resolve){var xhr=new XMLHttpRequest();xhr.open((opts&&opts.method)||'GET',url);if(opts&&opts.headers){Object.keys(opts.headers).forEach(function(k){xhr.setRequestHeader(k,opts.headers[k]);});}xhr.onload=function(){resolve({ok:xhr.status>=200&&xhr.status<300,status:xhr.status,text:function(){return new Promise(function(r){r(xhr.responseText);});},json:function(){return new Promise(function(r){r(JSON.parse(xhr.responseText));});}});};xhr.send(opts&&opts.body);});};}
+window.onerror = function(msg, url, line, col, err) {
+  var b = document.getElementById('js-err-banner');
+  if (!b) {
+    b = document.createElement('div');
+    b.id = 'js-err-banner';
+    b.style.cssText = 'position:fixed;bottom:10px;left:10px;right:10px;background:#dc2626;color:#fff;padding:12px 16px;border-radius:8px;font-size:13px;z-index:99999;box-shadow:0 10px 25px rgba(0,0,0,0.5);font-family:sans-serif;';
+    (document.body || document.documentElement).appendChild(b);
+  }
+  b.innerHTML += '<div style="margin-bottom:4px;"><b>JS Hatası:</b> ' + msg + ' (satır: ' + line + ')</div>';
+};
 </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>

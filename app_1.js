@@ -1,3 +1,4 @@
+// Hls check (graceful fallback)
 if (typeof Hls === 'undefined') {
-  document.write('<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"><\/script>');
+  console.log('Hls is undefined; native video element will be used');
 }
