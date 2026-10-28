@@ -1,0 +1,22 @@
+{
+  "name": "StreamFlow IPTV - Nocturne Stream",
+  "short_name": "StreamFlow",
+  "description": "Mobil, Tablet ve Smart TV IPTV Oynatıcı",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0F131B",
+  "theme_color": "#0F131B",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA6TaNRIABjOt1vKadHZOu1JBoN7N2YXYVV_1gxKC0Cyel7Tj1FVK6W-o6RWLXbieUgamoaZxQShvgDnsg_ZiBerY_fhvpnnICCX3xb5MhnnCITCH_VLg6vNWTYOGSF_qpUnpg3CjIyn7Hi5-0MhB--gyTv5bUXrYkjSoFi6QPT3W2ak41f6uKj_PP6O3oTmbA-PYyxMm0gBG488zge2utl5sySv54RCluUYM9OM4oalvRrHyNX9Cgx",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA6TaNRIABjOt1vKadHZOu1JBoN7N2YXYVV_1gxKC0Cyel7Tj1FVK6W-o6RWLXbieUgamoaZxQShvgDnsg_ZiBerY_fhvpnnICCX3xb5MhnnCITCH_VLg6vNWTYOGSF_qpUnpg3CjIyn7Hi5-0MhB--gyTv5bUXrYkjSoFi6QPT3W2ak41f6uKj_PP6O3oTmbA-PYyxMm0gBG488zge2utl5sySv54RCluUYM9OM4oalvRrHyNX9Cgx",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
